@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.vscode/
+node_modules/
+dist/
+data/
+ml/checkpoints/
+ml/results/

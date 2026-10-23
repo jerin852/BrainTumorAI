@@ -1,0 +1,922 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* ==========================================
+   NeuroVision AI — Complete Professional Dark UI
+   ========================================== */
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #f1f5f9;
+  background: #080a0f;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --bg: #080a0f;
+  --sidebar: #0b0e14;
+  --card: #10151f;
+  --card-hover: #151d2a;
+  --input-bg: #0b111b;
+  --border: #273142;
+  --border-hover: #3b4b63;
+
+  --text: #f1f5f9;
+  --muted: #b1bdce;
+  --subtle: #8795aa;
+
+  --blue: #60a5fa;
+  --blue-light: #bfdbfe;
+  --blue-bg: #14243b;
+
+  --green: #34d399;
+  --yellow: #fbbf24;
+  --red: #fb7185;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--bg) !important;
+  color: var(--text);
+}
+
+body {
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.app {
+  min-height: 100vh;
+  background: var(--bg) !important;
+  color: var(--text);
+}
+
+/* ==========================================
+   Text defaults — prevent black text on dark UI
+   ========================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b,
+label,
+legend {
+  color: var(--text);
+}
+
+p {
+  color: var(--muted);
+}
+
+a {
+  color: var(--blue-light);
+}
+
+::selection {
+  background: #244b7b;
+  color: #ffffff;
+}
+
+/* ==========================================
+   Sidebar and Branding
+   ========================================== */
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 250px;
+  padding: 27px 18px;
+  background: var(--sidebar) !important;
+  border-right: 1px solid #202632;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  padding: 0 7px 35px;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background: #172b48;
+  border: 1px solid #294567;
+  color: var(--blue-light);
+}
+
+.brand h2 {
+  font: 800 19px 'Manrope', sans-serif;
+  color: #f8fafc !important;
+  margin: 0;
+}
+
+.brand span {
+  display: block;
+  color: var(--subtle) !important;
+  font-size: 9px;
+  letter-spacing: 1.3px;
+  margin-top: 5px;
+}
+
+.nav-label,
+.eyebrow {
+  color: #91a0b5 !important;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.nav-label {
+  padding-left: 10px;
+  margin-bottom: 13px;
+}
+
+nav {
+  display: grid;
+  gap: 7px;
+}
+
+.nav-item {
+  border: 1px solid transparent;
+  background: transparent;
+  color: #b1bdce !important;
+  border-radius: 9px;
+  padding: 13px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-item:hover {
+  background: #171e2a !important;
+  color: #ffffff !important;
+  border-color: #2c394b;
+}
+
+.nav-item.active {
+  background: #14243b !important;
+  color: #bfdbfe !important;
+  border-color: #31547e;
+}
+
+.nav-item svg {
+  color: inherit;
+  flex-shrink: 0;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #aab6c7 !important;
+  font-size: 12px;
+  padding: 14px 8px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px #34d39935;
+}
+
+/* ==========================================
+   Main layout and top bar
+   ========================================== */
+
+.main {
+  margin-left: 250px;
+  padding: 31px 38px;
+  max-width: 1850px;
+  min-height: 100vh;
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.topbar .eyebrow {
+  margin: 0 0 8px;
+}
+
+.topbar h1 {
+  font: 800 28px 'Manrope', sans-serif;
+  color: #f8fafc !important;
+  margin: 0;
+  letter-spacing: -0.6px;
+}
+
+.model-badge {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #d0def1 !important;
+  background: #111722 !important;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 10px 14px;
+  font-size: 12px;
+}
+
+.model-badge svg {
+  color: var(--blue);
+}
+
+/* ==========================================
+   Dashboard welcome section
+   ========================================== */
+
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 35px;
+  border-radius: 17px;
+  border: 1px solid #2b3d55;
+  background:
+    radial-gradient(circle at 85% 15%, #1b3553 0%, transparent 38%),
+    linear-gradient(120deg, #111b2a, #0d121d 75%) !important;
+  overflow: hidden;
+}
+
+.welcome > div:first-child {
+  max-width: 560px;
+}
+
+.welcome .eyebrow {
+  color: var(--blue-light) !important;
+}
+
+.welcome h2 {
+  font: 800 clamp(26px, 3vw, 38px)/1.2 'Manrope', sans-serif;
+  color: #f8fafc !important;
+  margin: 15px 0;
+  letter-spacing: -0.8px;
+}
+
+.welcome p:not(.eyebrow) {
+  color: #bdc8d8 !important;
+  line-height: 1.8;
+  font-size: 14px;
+  max-width: 500px;
+}
+
+.brain-art {
+  color: #7fb6ff;
+  opacity: 0.8;
+  padding: 15px;
+}
+
+/* ==========================================
+   Buttons
+   ========================================== */
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid #60a5fa;
+  border-radius: 9px;
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+  padding: 13px 17px;
+  font-weight: 700;
+  margin-top: 12px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.primary-button:hover {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+/* ==========================================
+   Section headings
+   ========================================== */
+
+.section-heading {
+  margin: 33px 0 17px;
+}
+
+.section-heading h2 {
+  font: 700 20px 'Manrope', sans-serif;
+  color: #f1f5f9 !important;
+  margin: 0 0 7px;
+}
+
+.section-heading p,
+.panel-title p {
+  margin: 0;
+  color: var(--muted) !important;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   Model cards
+   ========================================== */
+
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.model-card {
+  position: relative;
+  background: var(--card) !important;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 22px;
+  min-height: 190px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.model-card:hover {
+  border-color: var(--border-hover);
+  background: var(--card-hover) !important;
+}
+
+.model-card.highlighted {
+  border-color: #41699b;
+  background: linear-gradient(145deg, #142238, #101722) !important;
+}
+
+.model-number {
+  color: var(--blue-light) !important;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.model-card h3 {
+  font: 700 17px 'Manrope', sans-serif;
+  color: #f1f5f9 !important;
+  margin: 22px 0 9px;
+}
+
+.model-card p {
+  color: #b0bdce !important;
+  font-size: 12px;
+  line-height: 1.7;
+  min-height: 40px;
+}
+
+.tag {
+  display: inline-block;
+  color: #bfdbfe !important;
+  background: #172b45 !important;
+  border: 1px solid #294567;
+  border-radius: 5px;
+  padding: 5px 7px;
+  font-size: 9px;
+  letter-spacing: 0.8px;
+}
+
+/* ==========================================
+   Notices and disclaimers
+   ========================================== */
+
+.notice {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding: 17px;
+  background: #111722 !important;
+  border: 1px solid #293444;
+  border-radius: 11px;
+  color: #c0cbd9 !important;
+}
+
+.notice svg {
+  flex-shrink: 0;
+  color: var(--blue-light);
+}
+
+.notice p {
+  margin: 0;
+  color: #c0cbd9 !important;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.disclaimer {
+  color: var(--subtle) !important;
+  font-size: 11px;
+  line-height: 1.7;
+  margin-top: 20px;
+}
+
+/* ==========================================
+   MRI analysis panels
+   ========================================== */
+
+.analysis-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 19px;
+}
+
+.panel {
+  background: var(--card) !important;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 23px;
+  min-width: 0;
+  color: var(--text) !important;
+}
+
+.panel-title {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 23px;
+}
+
+.panel-title > svg {
+  color: var(--blue-light);
+  flex-shrink: 0;
+}
+
+.panel-title h2 {
+  font: 700 17px 'Manrope', sans-serif;
+  color: #f1f5f9 !important;
+  margin: 0 0 6px;
+}
+
+.upload-area {
+  display: flex;
+  min-height: 300px;
+  border: 1px dashed #475569;
+  background: #0b1018 !important;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--blue-light) !important;
+  cursor: pointer;
+  padding: 15px;
+  text-align: center;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.upload-area:hover {
+  border-color: var(--blue);
+  background: #101a29 !important;
+}
+
+.upload-area strong {
+  color: #f1f5f9 !important;
+}
+
+.upload-area span,
+.upload-area small {
+  color: #a5b2c4 !important;
+  font-size: 12px;
+}
+
+.upload-area img {
+  max-width: 100%;
+  max-height: 340px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #c5d2e3 !important;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  margin-top: 14px;
+}
+
+/* ==========================================
+   Prediction and empty state
+   ========================================== */
+
+.empty-result {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 22px;
+  color: var(--text) !important;
+}
+
+.empty-result svg {
+  color: #7d91ad;
+}
+
+.empty-result h3 {
+  font: 700 17px 'Manrope', sans-serif;
+  color: #f1f5f9 !important;
+  margin: 18px 0 8px;
+}
+
+.empty-result p {
+  color: #b0bdce !important;
+  font-size: 12px;
+  line-height: 1.8;
+  max-width: 290px;
+}
+
+.panel img {
+  max-width: 100%;
+}
+
+.panel pre {
+  max-width: 100%;
+  overflow-x: auto;
+  color: #dbeafe;
+}
+
+/* ==========================================
+   Advanced model evaluation
+   Supports common metric card class names
+   ========================================== */
+
+.metrics-grid,
+.metric-grid,
+.stats-grid,
+.metric-cards,
+.evaluation-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.metric-card,
+.metric-item,
+.stat-card,
+.metric-box,
+.evaluation-card,
+.dashboard-card,
+[class*="metric-card"],
+[class*="stat-card"] {
+  min-width: 0;
+  padding: 22px;
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 13px;
+  color: var(--text) !important;
+}
+
+.metric-card h3,
+.metric-item h3,
+.stat-card h3,
+.metric-box h3 {
+  color: var(--muted) !important;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.metric-card strong,
+.metric-item strong,
+.stat-card strong,
+.metric-box strong {
+  display: block;
+  color: #f8fafc !important;
+  font: 700 28px 'Manrope', sans-serif;
+  margin-top: 12px;
+  overflow-wrap: anywhere;
+}
+
+.metric-card p,
+.metric-item p,
+.stat-card p,
+.metric-box p {
+  color: var(--muted) !important;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* General evaluation text: fixes black headings and values */
+.main h1,
+.main h2,
+.main h3,
+.main h4,
+.main h5,
+.main h6,
+.main strong,
+.main b {
+  color: #f8fafc !important;
+}
+
+.main p,
+.main label,
+.main small {
+  color: var(--muted);
+}
+
+.main [class*="metric"] {
+  color: #f1f5f9;
+}
+
+/* Model selector */
+select {
+  width: 100%;
+  max-width: 500px;
+  min-height: 48px;
+  padding: 12px 14px;
+  color: #f1f5f9 !important;
+  background: #0c111a !important;
+  border: 1px solid #3a475a;
+  border-radius: 9px;
+}
+
+select option {
+  color: #f1f5f9;
+  background: #10141d;
+}
+
+/* ==========================================
+   Tables and confusion matrix
+   ========================================== */
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 12px;
+  background: #10141d;
+}
+
+th,
+td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #27303d;
+  white-space: nowrap;
+}
+
+th {
+  color: #c1ccdb !important;
+  background: #171d28 !important;
+  font-weight: 600;
+}
+
+td {
+  color: #e0e7f0 !important;
+  background: #10141d;
+}
+
+tbody tr:hover td {
+  background: #171f2c !important;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.pending {
+  color: #fcd34d !important;
+  background: #292315 !important;
+  border: 1px solid #514020;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 10px;
+}
+
+/* ==========================================
+   Form fields
+   ========================================== */
+
+input,
+textarea {
+  color: #f1f5f9 !important;
+  background: var(--input-bg) !important;
+  border: 1px solid #344052;
+  border-radius: 8px;
+  padding: 11px 12px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #8794a7 !important;
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+   Status colours
+   ========================================== */
+
+.success,
+.status-success {
+  color: var(--green) !important;
+}
+
+.error,
+.status-error {
+  color: var(--red) !important;
+}
+
+.warning,
+.status-warning {
+  color: var(--yellow) !important;
+}
+
+/* ==========================================
+   Footer and scrollbars
+   ========================================== */
+
+footer {
+  color: #8491a4 !important;
+  font-size: 11px;
+  text-align: center;
+  padding: 32px 0 8px;
+}
+
+* {
+  scrollbar-color: #394455 #0b0e14;
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0b0e14;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #394455;
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #526177;
+}
+
+/* ==========================================
+   Responsive layout
+   ========================================== */
+
+@media (max-width: 1050px) {
+  .main {
+    padding: 25px;
+  }
+
+  .model-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .model-card {
+    min-height: auto;
+  }
+
+  .analysis-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-grid,
+  .metric-grid,
+  .stats-grid,
+  .metric-cards,
+  .evaluation-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    padding: 17px;
+  }
+
+  .brand {
+    padding-bottom: 20px;
+  }
+
+  .nav-label,
+  .sidebar-bottom {
+    display: none;
+  }
+
+  nav {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-item {
+    padding: 10px;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 20px 15px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+  }
+
+  .topbar h1 {
+    font-size: 23px;
+  }
+
+  .model-badge {
+    font-size: 0;
+    padding: 10px;
+  }
+
+  .welcome {
+    padding: 23px;
+  }
+
+  .brain-art {
+    display: none;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  .metrics-grid,
+  .metric-grid,
+  .stats-grid,
+  .metric-cards,
+  .evaluation-metrics {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  th,
+  td {
+    padding: 11px 9px;
+  }
+}
